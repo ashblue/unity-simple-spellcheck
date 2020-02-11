@@ -1,0 +1,16 @@
+{
+    "name": "com.fluid.simple-spellcheck.Tests",
+    "references": [
+        "com.fluid.simple-spellcheck"
+    ],
+    "optionalUnityReferences": [
+        "TestAssemblies"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": []
+}

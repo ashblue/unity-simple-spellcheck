@@ -1,0 +1,19 @@
+{
+    "name": "com.fluid.simple-spellcheck.Editor.Tests",
+    "references": [
+        "com.fluid.simple-spellcheck",
+        "com.fluid.simple-spellcheck.Editor"
+    ],
+    "optionalUnityReferences": [
+        "TestAssemblies"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": []
+}

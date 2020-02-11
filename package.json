@@ -1,0 +1,7 @@
+{
+  "name": "com.fluid.simple-spellcheck",
+  "version": "0.0.0",
+  "displayName": "Unity Simple Spellcheck",
+  "description": "A simple spell check utility for use in the Unity Editor",
+  "unity": ""
+}

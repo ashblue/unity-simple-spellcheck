@@ -5,6 +5,7 @@
 #text {
     flex-direction: row;
     flex-wrap: wrap;
+    margin-bottom: 10px;
 }
 
 .bad-spelling {

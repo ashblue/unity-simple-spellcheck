@@ -19,6 +19,29 @@ namespace CleverCrow.Fluid.SimpleSpellcheck {
 
             var tree = Resources.Load<VisualTreeAsset>("SpellCheckResults");
             tree.CloneTree(root);
+
+            var button = root.Query<Button>("open-settings").First();
+            button.clickable.clicked += OpenSettings;
+        }
+
+        private void OpenSettings () {
+            if (SpellCheckSettings.DoesExist()) {
+                Selection.activeObject = SpellCheckSettings.Instance;
+                return;
+            }
+
+            if (AssetDatabase.LoadAssetAtPath<Object>("Assets/Editor") == null) {
+                AssetDatabase.CreateFolder("Assets", "Editor");
+            }
+
+            if (AssetDatabase.LoadAssetAtPath<Object>("Assets/Editor/Resources") == null) {
+                AssetDatabase.CreateFolder("Assets/Editor", "Resources");
+            }
+
+            var settings = CreateInstance<SpellCheckSettings>();
+            AssetDatabase.CreateAsset(settings, "Assets/Editor/Resources/SpellCheckSettings.asset");
+
+            Selection.activeObject = SpellCheckSettings.Instance;
         }
 
         private void ShowText (IWordSpelling[] results) {

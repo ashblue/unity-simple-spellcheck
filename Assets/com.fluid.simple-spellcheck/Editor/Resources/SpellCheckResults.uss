@@ -1,0 +1,13 @@
+#container {
+    padding: 10px;
+}
+
+#text {
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.bad-spelling {
+    color: red;
+    -unity-font-style: bold;
+}

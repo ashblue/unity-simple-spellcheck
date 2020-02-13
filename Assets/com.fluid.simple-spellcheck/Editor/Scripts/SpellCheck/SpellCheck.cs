@@ -21,6 +21,8 @@ namespace CleverCrow.Fluid.SimpleSpellcheck {
             }
 
             var wordList = wordsTxt.text.Split(new []{"\r\n"}, StringSplitOptions.None);
+            wordList = wordList.Concat(SpellCheckSettings.Instance.ExtraWords.ToArray()).ToArray();
+
             var dictionary = new EnglishDictionary(new HashSet<string>(wordList));
             _internal = new SpellCheckInternal(dictionary);
         }
@@ -39,6 +41,10 @@ namespace CleverCrow.Fluid.SimpleSpellcheck {
         [MenuItem("Spelling/Test")]
         public static void TestSpellCheck () {
             Instance.Validate("This is a block of tidddxx with some spalkling arrars. This isn't how your mom's dog normally wants you to spell.");
+        }
+
+        public static void Clear () {
+            _instance = null;
         }
     }
 

@@ -1,0 +1,5 @@
+<UXML xmlns="UnityEngine.UIElements">
+    <VisualElement name="container">
+        <VisualElement name="text" />
+    </VisualElement>
+</UXML>

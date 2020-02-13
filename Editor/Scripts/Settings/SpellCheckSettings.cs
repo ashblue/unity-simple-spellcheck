@@ -19,6 +19,10 @@ namespace CleverCrow.Fluid.SimpleSpellcheck {
             }
         }
 
+        public static bool DoesExist () {
+            return Resources.Load<SpellCheckSettings>("SpellCheckSettings") != null;
+        }
+
         [SerializeField]
         private List<string> _extraWords = new List<string>();
 

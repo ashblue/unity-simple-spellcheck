@@ -7,7 +7,7 @@ using UnityEngine;
 namespace CleverCrow.Fluid.SimpleSpellcheck {
     public class SpellCheck {
         private static SpellCheck _instance;
-        private SpellCheckInternal _internal;
+        private readonly SpellCheckInternal _internal;
 
         public static SpellCheck Instance => _instance ?? (_instance = new SpellCheck());
 
@@ -34,13 +34,7 @@ namespace CleverCrow.Fluid.SimpleSpellcheck {
         }
 
         public void Validate (string text) {
-            Debug.Log(text);
             SpellCheckResults.ShowWindow(_internal.Validate(text));
-        }
-
-        [MenuItem("Spelling/Test")]
-        public static void TestSpellCheck () {
-            Instance.Validate("This is a block of tidddxx with some spalkling arrars. This isn't how your mom's dog normally wants you to spell.");
         }
 
         public static void Clear () {

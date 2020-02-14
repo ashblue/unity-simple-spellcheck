@@ -10,10 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fb9ef6d906063f14eb0ee0de17d10a24, type: 3}
-  m_Name: ExampleDialogue
+  m_Name: ExampleDialogueBadLineBreaks
   m_EditorClassIdentifier: 
   _title: Thas is an example
-  _text: "This is a block of tidddxx with some spalkling arrars. This isn't how your
-    mom's dog normally wants you to spell.\n\nasdf\n\n\n\nasdfasdfsdaf \nasdf\nasdf
-    \n asdf asdf asdf asdf asdf \n asdf asd fa asdfasdf asdf asdf asdf asdf           
-    asdf asd fasdf adfs.\n\nasdf asdf"
+  _text: "asdf\n\n\n\nasdfasdfsdaf \nasdf\nasdf \n asdf asdf asdf asdf asdf \n asdf
+    asd fa asdfasdf asdf asdf asdf asdf            asdf asd fasdf adfs.\n\nasdf asdf"

@@ -9,13 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 542cda9a3e7349ac9c415ba5fc5fdcc3, type: 3}
-  m_Name: SpellCheckSettings
+  m_Script: {fileID: 11500000, guid: fb9ef6d906063f14eb0ee0de17d10a24, type: 3}
+  m_Name: ExampleDialogue
   m_EditorClassIdentifier: 
-  _extraWords:
-  - qwert
-  - asdf
-  - qwerty
-  - qqqq
-  - erwerwer
-  - arrars
+  _title: Thas is an example
+  _text: This is a block of tidddxx with some spalkling arrars. This isn't how your
+    mom's dog normally wants you to spell.

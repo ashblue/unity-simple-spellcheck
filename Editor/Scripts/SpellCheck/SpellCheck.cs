@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using UnityEditor;
 using UnityEngine;
 
@@ -50,7 +51,11 @@ namespace CleverCrow.Fluid.SimpleSpellcheck {
         }
 
         public IWordSpelling[] Validate (string text) {
-            return text
+            var cleanText = text
+                .Replace("\n", " ")
+                .Replace("\r", " ");
+
+            return Regex.Replace(cleanText, "[ ]{2,}", " ")
                 .Split(' ')
                 .Select(i => new WordSpelling(i, _dic.HasWord(i)))
                 .ToArray<IWordSpelling>();

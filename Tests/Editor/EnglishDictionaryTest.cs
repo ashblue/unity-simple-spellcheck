@@ -79,6 +79,14 @@ namespace CleverCrow.Fluid.SimpleSpellcheck {
 
                 Assert.IsTrue(dic.HasWord("you've"));
             }
+
+            [Test]
+            public void It_should_evaluate_contractions_properly () {
+                var words = new HashSet<string> { "i'm" };
+                var dic = Setup(words);
+
+                Assert.IsTrue(dic.HasWord("I'm"));
+            }
         }
     }
 }

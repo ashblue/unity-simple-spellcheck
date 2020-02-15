@@ -28,7 +28,7 @@ namespace CleverCrow.Fluid.SimpleSpellcheck {
 
             if (logs.Count == 0) {
                 var noResults = root.Query<VisualElement>("no-results").First();
-                noResults.style.display = DisplayStyle.None;
+                noResults.style.display = DisplayStyle.Flex;
             }
 
             var logContainer = root.Query<VisualElement>("log-container").First();

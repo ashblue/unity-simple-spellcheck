@@ -1,6 +1,55 @@
-# Unity Simple Spellcheck
+# Unity Simple Spell Check
 
-A simple spell check utility for use in the Unity Editor
+Unity simple spell check provides a fast and easy way to evaluate text in your game for basic spelling errors. It uses a [local dictionary](https://github.com/dwyl/english-words) and allows for advanced configuration.
+
+## Features
+
+### Usage with text area attributes
+
+![Simple Usage](images/simple-usage.png)
+
+This will create a simple spell check button that evaluates a custom text area. If you need some basic spell checking for items or large blocks of text this should help.
+
+```c#
+public class ExampleDialogue : ScriptableObject {
+    [TextAreaSpellCheck]
+    public string text;
+}
+```
+
+### Usage with advanced project logging
+
+![Advanced Usage](images/advanced-usage.png)
+
+You can log text from anywhere in your game with this pattern. You'll need to do this if you have large amounts of dialogue and you want to evaluate it all at once.
+
+```c#
+public class SpellCheckAllDialogue {
+    [MenuItem("Spell Check/All Dialogue")]
+    public static void CheckAllDialogue () {
+        var logList = new List<LogEntry>();
+
+        var guids = AssetDatabase.FindAssets($"t:{typeof(ExampleDialogue).Name}");
+        foreach (var guid in guids) {
+            var path = AssetDatabase.GUIDToAssetPath(guid);
+            var asset = AssetDatabase.LoadAssetAtPath<ExampleDialogue>(path);
+
+            if (!SpellCheck.Instance.IsInvalid(asset.Title) && !SpellCheck.Instance.IsInvalid(asset.Text)) continue;
+
+            var log = new LogEntry($"{asset.Title} {asset.Text}", () => {
+                SpellCheck.Instance.ClearValidation();
+                SpellCheck.Instance.AddValidation("Title", asset.Title);
+                SpellCheck.Instance.AddValidation("Text", asset.Text);
+                Selection.activeObject = asset;
+            });
+
+            logList.Add(log);
+        }
+
+        SpellCheck.Instance.ShowLogs("All Example Dialogue Errors", logList);
+    }
+}
+```
 
 ## Installation
 

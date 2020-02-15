@@ -10,7 +10,7 @@ namespace CleverCrow.Fluid.SimpleSpellcheck {
             get {
                 if (_instance != null) return _instance;
 
-                _instance = Resources.Load<SpellCheckSettings>("SpellCheckSettings");
+                _instance = Resources.Load<SpellCheckSettings>("SpellCheck/SpellCheckSettings");
                 if (_instance == null) {
                     return CreateInstance<SpellCheckSettings>();
                 }
@@ -20,7 +20,7 @@ namespace CleverCrow.Fluid.SimpleSpellcheck {
         }
 
         public static bool DoesExist () {
-            return Resources.Load<SpellCheckSettings>("SpellCheckSettings") != null;
+            return Resources.Load<SpellCheckSettings>("SpellCheck/SpellCheckSettings") != null;
         }
 
         [SerializeField]

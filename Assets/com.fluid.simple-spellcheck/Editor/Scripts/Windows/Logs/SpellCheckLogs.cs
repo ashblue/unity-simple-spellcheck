@@ -14,9 +14,9 @@ namespace CleverCrow.Fluid.SimpleSpellcheck {
 
         private void OnEnable () {
             var root = rootVisualElement;
-            root.styleSheets.Add(Resources.Load<StyleSheet>("SpellCheckLogs"));
+            root.styleSheets.Add(Resources.Load<StyleSheet>("SpellCheck/Logs"));
 
-            var tree = Resources.Load<VisualTreeAsset>("SpellCheckLogs");
+            var tree = Resources.Load<VisualTreeAsset>("SpellCheck/Logs");
             tree.CloneTree(root);
         }
 

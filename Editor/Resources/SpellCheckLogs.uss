@@ -1,0 +1,33 @@
+#container {
+    padding: 10px;
+}
+
+.hide {
+    display: none;
+}
+
+#title {
+    -unity-font-style: bold;
+    margin-bottom: 10px;
+}
+
+.log-entry {
+    flex-direction: row;
+    margin-bottom: 10px;
+    justify-content: space-between;
+    border-width: 3px;
+    border-color: gray;
+    height: 40px;
+    padding: 3px;
+}
+
+.log-entry_button-container {
+    flex-direction: row;
+    width: 110px;
+}
+
+.log-entry__text {
+    overflow: hidden;
+    flex-grow: 1;
+    color: #333;
+}

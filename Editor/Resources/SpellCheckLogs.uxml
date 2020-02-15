@@ -1,0 +1,13 @@
+<UXML xmlns="UnityEngine.UIElements">
+    <ScrollView>
+        <VisualElement name="container">
+            <TextElement name="title" />
+            <TextElement
+                name="no-results"
+                class="hide"
+                text="No spelling errors found"
+            />
+            <VisualElement name="log-container" />
+        </VisualElement>
+    </ScrollView>
+</UXML>

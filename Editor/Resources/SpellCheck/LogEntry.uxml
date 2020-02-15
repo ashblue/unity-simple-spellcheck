@@ -1,0 +1,18 @@
+<UXML xmlns="UnityEngine.UIElements">
+    <VisualElement class="log-entry">
+        <TextElement
+            class="log-entry__text"
+            text="This is a block of tidddxx with some spalkling arrars. This isn't how..."
+        />
+
+            <Button
+                class="log-entry__button-hide"
+                text="Hide"
+            />
+
+            <Button
+                class="log-entry__button-view"
+                text="View"
+            />
+    </VisualElement>
+</UXML>

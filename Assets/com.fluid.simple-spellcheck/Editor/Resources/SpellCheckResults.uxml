@@ -1,7 +1,10 @@
 <UXML xmlns="UnityEngine.UIElements">
     <VisualElement name="container">
         <VisualElement name="text" >
-            <TextElement text="Trigger the spell check API `SpellCheck.Instance.Validate(text)` to see spelling errors." />
+            <TextElement
+                class="text-block"
+                text="Trigger the spell check API `SpellCheck.Instance.Validate(text)` to see spelling errors."
+            />
         </VisualElement>
 
         <Button

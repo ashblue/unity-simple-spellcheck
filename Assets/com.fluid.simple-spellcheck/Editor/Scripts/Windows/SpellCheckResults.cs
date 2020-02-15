@@ -7,9 +7,18 @@ namespace CleverCrow.Fluid.SimpleSpellcheck {
     public class SpellCheckResults : EditorWindow {
         private VisualElement _text;
 
-        public static void ShowWindow (IWordSpelling[] results) {
+        public static SpellCheckResults GetWindow () {
             var window = GetWindow<SpellCheckResults>();
             window.titleContent = new GUIContent("Spell Check");
+
+            return window;
+        }
+
+        public static void ShowWindow (IWordSpelling[] results) {
+            var window = GetWindow();
+            window.titleContent = new GUIContent("Spell Check");
+
+            window.ClearText();
             window.ShowText(results);
         }
 
@@ -47,9 +56,9 @@ namespace CleverCrow.Fluid.SimpleSpellcheck {
         private void ShowText (IWordSpelling[] results) {
             var root = rootVisualElement.Query("text").First();
 
-            foreach (var child in root.Children().ToArray()) {
-                root.Remove(child);
-            }
+            var textBlock = new VisualElement();
+            textBlock.AddToClassList("text-block");
+            root.Add(textBlock);
 
             foreach (var word in results) {
                 var text = new TextElement {text = $"{word.Text} "};
@@ -58,8 +67,28 @@ namespace CleverCrow.Fluid.SimpleSpellcheck {
                     text.AddToClassList("bad-spelling");
                 }
 
-                root.Add(text);
+                textBlock.Add(text);
             }
+
+            root.Add(textBlock);
+        }
+
+        public void ClearText () {
+            var root = rootVisualElement.Query("text").First();
+
+            foreach (var child in root.Children().ToArray()) {
+                root.Remove(child);
+            }
+        }
+
+        public void ShowText (string title, IWordSpelling[] text) {
+            var root = rootVisualElement.Query("text").First();
+
+            var elTitle = new TextElement { text = title };
+            elTitle.AddToClassList("text-title");
+            root.Add(elTitle);
+
+            ShowText(text);
         }
     }
 }

@@ -13,7 +13,7 @@ namespace CleverCrow.Fluid.SimpleSpellcheck {
         public static SpellCheck Instance => _instance ?? (_instance = new SpellCheck());
 
         private SpellCheck () {
-            TextAsset wordsTxt = null;
+            TextAsset wordsTxt;
             try {
                 wordsTxt = GetWordsTxt();
             } catch (Exception e) {
@@ -41,6 +41,22 @@ namespace CleverCrow.Fluid.SimpleSpellcheck {
         public static void Clear () {
             _instance = null;
         }
+
+        public bool IsInvalid (string text) {
+            return _internal.IsInvalid(text);
+        }
+
+        public void ClearValidation () {
+            SpellCheckResults.GetWindow().ClearText();
+        }
+
+        public void AddValidation (string title, string text) {
+            SpellCheckResults.GetWindow().ShowText(title, _internal.Validate(text));
+        }
+
+        public void ShowLogs (string title, List<LogEntry> logs) {
+            SpellCheckLogs.ShowWindow(title, logs);
+        }
     }
 
     public class SpellCheckInternal {
@@ -51,14 +67,25 @@ namespace CleverCrow.Fluid.SimpleSpellcheck {
         }
 
         public IWordSpelling[] Validate (string text) {
+            return GetWords(text)
+                .Select(i => new WordSpelling(i, _dic.HasWord(i)))
+                .ToArray<IWordSpelling>();
+        }
+
+        public bool IsInvalid (string text) {
+            return GetWords(text)
+                .ToList()
+                .Find(i => _dic.HasWord(i) == false) != null;
+        }
+
+        private string[] GetWords (string text) {
             var cleanText = text
                 .Replace("\n", " ")
                 .Replace("\r", " ");
 
-            return Regex.Replace(cleanText, "[ ]{2,}", " ")
-                .Split(' ')
-                .Select(i => new WordSpelling(i, _dic.HasWord(i)))
-                .ToArray<IWordSpelling>();
+            return Regex
+                .Replace(cleanText, "[ ]{2,}", " ")
+                .Split(' ');
         }
     }
 }

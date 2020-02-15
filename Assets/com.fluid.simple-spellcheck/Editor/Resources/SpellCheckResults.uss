@@ -2,10 +2,14 @@
     padding: 10px;
 }
 
-#text {
+.text-block {
     flex-direction: row;
     flex-wrap: wrap;
     margin-bottom: 10px;
+}
+
+.text-title {
+    -unity-font-style: bold;
 }
 
 .bad-spelling {

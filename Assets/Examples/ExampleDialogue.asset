@@ -13,7 +13,5 @@ MonoBehaviour:
   m_Name: ExampleDialogue
   m_EditorClassIdentifier: 
   _title: Thas is an example
-  _text: "This is a block of tidddxx with some spalkling arrars. This isn't how your
-    mom's dog normally wants you to spell.\n\nasdf\n\n\n\nasdfasdfsdaf \nasdf\nasdf
-    \n asdf asdf asdf asdf asdf \n asdf asd fa asdfasdf asdf asdf asdf asdf           
-    asdf asd fasdf adfs.\n\nasdf asdf"
+  _text: This is a block of tidddxx with some spalkling arrars. This isn't how your
+    mom's dog normally wants you to spell.

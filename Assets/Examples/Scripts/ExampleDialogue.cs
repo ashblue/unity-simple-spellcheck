@@ -9,5 +9,8 @@ namespace CleverCrow.Fluid.SimpleSpellcheck.Examples {
         [SerializeField]
         [TextAreaSpellCheck]
         private string _text;
+
+        public string Title => _title;
+        public string Text => _text;
     }
 }

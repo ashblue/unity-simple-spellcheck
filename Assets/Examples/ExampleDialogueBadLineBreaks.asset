@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb9ef6d906063f14eb0ee0de17d10a24, type: 3}
   m_Name: ExampleDialogueBadLineBreaks
   m_EditorClassIdentifier: 
-  _title: Thas is an example
+  _title: This is an example
   _text: "asdf\n\n\n\nasdfasdfsdaf \nasdf\nasdf \n asdf asdf asdf asdf asdf \n asdf
     asd fa asdfasdf asdf asdf asdf asdf            asdf asd fasdf adfs.\n\nasdf asdf"

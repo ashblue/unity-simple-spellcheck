@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/ashblue/unity-simple-spellcheck/compare/v1.0.0...v1.0.1) (2020-02-15)
+
+
+### Bug Fixes
+
+* npm converted dictionary no longer crashes ([53c68d1](https://github.com/ashblue/unity-simple-spellcheck/commit/53c68d1517e27a85d8146bab182118879155d7f7))
+
 # 1.0.0 (2020-02-15)
 
 

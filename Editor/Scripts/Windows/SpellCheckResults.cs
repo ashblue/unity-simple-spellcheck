@@ -47,6 +47,10 @@ namespace CleverCrow.Fluid.SimpleSpellcheck {
                 AssetDatabase.CreateFolder("Assets/Editor", "Resources");
             }
 
+            if (AssetDatabase.LoadAssetAtPath<Object>("Assets/Editor/Resources/SpellCheck") == null) {
+                AssetDatabase.CreateFolder("Assets/Editor/Resources", "SpellCheck");
+            }
+
             var settings = CreateInstance<SpellCheckSettings>();
             AssetDatabase.CreateAsset(settings, "Assets/Editor/Resources/SpellCheck/SpellCheckSettings.asset");
 

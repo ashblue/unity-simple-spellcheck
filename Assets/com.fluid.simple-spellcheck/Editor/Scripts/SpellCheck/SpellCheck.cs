@@ -22,8 +22,8 @@ namespace CleverCrow.Fluid.SimpleSpellcheck {
             }
 
             var wordList = wordsTxt.text
-                .Split(new []{"\r\n"}, StringSplitOptions.None)
-                .Select(i => i.ToLower());
+                .ToLower()
+                .Split(new []{"\r\n", "\n"}, StringSplitOptions.None);
             wordList = wordList.Concat(SpellCheckSettings.Instance.ExtraWords.ToArray()).ToArray();
 
             var dictionary = new EnglishDictionary(new HashSet<string>(wordList));

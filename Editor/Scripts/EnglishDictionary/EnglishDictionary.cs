@@ -17,18 +17,23 @@ namespace CleverCrow.Fluid.SimpleSpellcheck {
         public bool HasWord (string word) {
             if (word.Contains("-")) {
                 var words = word.Split('-');
-                var badWord = words.ToList().Find(w => !_words.Contains(CleanedWord(w)));
+                var badWord = words.ToList().Find(w => !IsWordValid(w));
                 return badWord == null;
             }
 
-            return _words.Contains(CleanedWord(word));
+            return IsWordValid(word);
+        }
+
+        private bool IsWordValid (string word) {
+            var cleanedWord = CleanedWord(word);
+            return _words.Contains(cleanedWord.ToLower()) || _words.Contains(cleanedWord);
         }
 
         private string CleanedWord (string word) {
             var wordFilter = word.Replace("'s", "");
             wordFilter = Regex.Replace(wordFilter, "[^a-zA-Z']", string.Empty);
 
-            return wordFilter.ToLower();
+            return wordFilter;
         }
     }
 }

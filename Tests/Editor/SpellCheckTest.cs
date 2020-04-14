@@ -3,7 +3,7 @@ using NUnit.Framework;
 
 namespace CleverCrow.Fluid.SimpleSpellcheck {
     public class SpellCheckTest {
-        public class GetErrorsMethod {
+        public class ValidateMethod {
             private IEnglishDictionary _dic;
             private SpellCheckInternal _spellCheck;
 
@@ -37,7 +37,7 @@ namespace CleverCrow.Fluid.SimpleSpellcheck {
             }
         }
 
-        public class GetWordsMethod {
+        public class IsInvalidMethod {
             [Test]
             public void It_should_return_true_if_word_is_invalid () {
                 var dic = Substitute.For<IEnglishDictionary>();
@@ -53,7 +53,6 @@ namespace CleverCrow.Fluid.SimpleSpellcheck {
                 var spellCheck = new SpellCheckInternal(dic);
 
                 Assert.IsFalse(spellCheck.IsInvalid("lorem"));
-
             }
         }
     }

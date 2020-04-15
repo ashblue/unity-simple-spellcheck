@@ -31,6 +31,7 @@ namespace CleverCrow.Fluid.SimpleSpellcheck {
 
         private string CleanedWord (string word) {
             var wordFilter = word.Replace("'s", "");
+            wordFilter = Regex.Replace(wordFilter, @"<[^>]*>", string.Empty);
             wordFilter = Regex.Replace(wordFilter, "[^a-zA-Z']", string.Empty);
 
             return wordFilter;

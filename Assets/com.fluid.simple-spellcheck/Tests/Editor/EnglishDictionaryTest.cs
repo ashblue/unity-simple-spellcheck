@@ -90,6 +90,16 @@ namespace CleverCrow.Fluid.SimpleSpellcheck {
                 }
             }
 
+            public class WhenWordHasTags : EnglishDictionaryTest {
+                [Test]
+                public void It_should_validate_word_inside () {
+                    var words = new HashSet<string> { "lorem" };
+                    var dic = Setup(words);
+
+                    Assert.IsTrue(dic.HasWord("<i>lorem</i>"));
+                }
+            }
+
             public class WhenWordHasADash : EnglishDictionaryTest {
                 [Test]
                 public void It_should_validate_if_text_is_capitalized_and_so_is_a_word () {

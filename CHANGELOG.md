@@ -1,3 +1,12 @@
+# [1.1.0](https://github.com/ashblue/unity-simple-spellcheck/compare/v1.0.1...v1.1.0) (2020-04-15)
+
+
+### Features
+
+* **dictionary:** added words can now be modified ([dcab2bb](https://github.com/ashblue/unity-simple-spellcheck/commit/dcab2bb3228181ae4338b837b8199c0457cbd26b))
+* **dictionary:** capital letters now respected properly ([3b83007](https://github.com/ashblue/unity-simple-spellcheck/commit/3b83007a795e03bd7a2ad2a29effc2d12c2700d2))
+* **spell check:** xml tags no longer break spell check ([2e6ed64](https://github.com/ashblue/unity-simple-spellcheck/commit/2e6ed64d81eb2aae7264bbdcbcf2c48448ed08f6))
+
 ## [1.0.1](https://github.com/ashblue/unity-simple-spellcheck/compare/v1.0.0...v1.0.1) (2020-02-15)
 
 

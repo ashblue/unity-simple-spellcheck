@@ -68,10 +68,11 @@ namespace CleverCrow.Fluid.SimpleSpellcheck {
             _dic = dic;
         }
 
-        public IWordSpelling[] Validate (string text) {
-            return GetWords(text)
-                .Select(i => new WordSpelling(i, _dic.HasWord(i)))
-                .ToArray<IWordSpelling>();
+        public string Validate (string text) {
+            var words = GetWords(text)
+                .Select(i => _dic.HasWord(i) ? i : $"<color=red>{i}</color>");
+
+            return string.Join(" ", words);
         }
 
         public bool IsInvalid (string text) {

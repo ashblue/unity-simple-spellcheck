@@ -6,6 +6,7 @@
                 name="no-results"
                 class="hide"
                 text="No spelling errors found"
+                enabledRichText="true"
             />
             <VisualElement name="log-container" />
         </VisualElement>

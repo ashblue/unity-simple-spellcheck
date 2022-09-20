@@ -14,12 +14,12 @@ namespace CleverCrow.Fluid.SimpleSpellcheck {
             return window;
         }
 
-        public static void ShowWindow (IWordSpelling[] results) {
+        public static void ShowWindow (string text) {
             var window = GetWindow();
             window.titleContent = new GUIContent("Spell Check");
 
             window.ClearText();
-            window.ShowText(results);
+            window.ShowText(text);
         }
 
         private void OnEnable () {
@@ -57,24 +57,11 @@ namespace CleverCrow.Fluid.SimpleSpellcheck {
             Selection.activeObject = SpellCheckSettings.Instance;
         }
 
-        private void ShowText (IWordSpelling[] results) {
+        private void ShowText (string text) {
             var root = rootVisualElement.Query("text").First();
 
-            var textBlock = new VisualElement();
-            textBlock.AddToClassList("text-block");
-            root.Add(textBlock);
-
-            foreach (var word in results) {
-                var text = new TextElement {text = $"{word.Text} "};
-
-                if (!word.IsValid) {
-                    text.AddToClassList("bad-spelling");
-                }
-
-                textBlock.Add(text);
-            }
-
-            root.Add(textBlock);
+            var textElement = new TextElement { text = text, enableRichText = true };
+            root.Add(textElement);
         }
 
         public void ClearText () {
@@ -85,7 +72,7 @@ namespace CleverCrow.Fluid.SimpleSpellcheck {
             }
         }
 
-        public void ShowText (string title, IWordSpelling[] text) {
+        public void ShowText (string title, string text) {
             var root = rootVisualElement.Query("text").First();
 
             var elTitle = new TextElement { text = title };

@@ -1,7 +1,27 @@
 {
   "name": "com.fluid.simple-spellcheck",
-  "version": "0.0.0",
+  "version": "1.1.1",
   "displayName": "Unity Simple Spellcheck",
   "description": "A simple spell check utility for use in the Unity Editor",
-  "unity": ""
+  "unity": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ashblue/unity-simple-spellcheck.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ashblue/unity-simple-spellcheck/issues"
+  },
+  "homepage": "https://github.com/ashblue/unity-simple-spellcheck#readme",
+  "keywords": [
+    "spelling",
+    "spell check",
+    "unity editor",
+    "unity textarea"
+  ],
+  "author": {
+    "name": "Ash Blue",
+    "email": "ash@clevercrowgames.com",
+    "url": "https://twitter.com/ashbluewd"
+  }
 }

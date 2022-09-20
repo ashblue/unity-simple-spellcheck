@@ -1,6 +1,6 @@
 {
   "name": "com.fluid.simple-spellcheck",
-  "version": "0.0.0",
+  "version": "1.1.1",
   "unity": "",
   "displayName": "Unity Simple Spellcheck",
   "description": "A simple spell check utility for use in the Unity Editor",
@@ -11,11 +11,11 @@
     "commit": "git-cz"
   },
   "keywords": [
-  "spelling",
-  "spell check",
-  "unity editor",
-  "unity textarea"
-],
+    "spelling",
+    "spell check",
+    "unity editor",
+    "unity textarea"
+  ],
   "husky": {
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"

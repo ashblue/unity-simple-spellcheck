@@ -1,3 +1,11 @@
+## [1.1.1](https://github.com/ashblue/unity-simple-spellcheck/compare/v1.1.0...v1.1.1) (2022-09-20)
+
+
+### Bug Fixes
+
+* no spelling errors no longer falsely displays ([466b057](https://github.com/ashblue/unity-simple-spellcheck/commit/466b057adaf09828c052ff970bc1624023035edc))
+* spellcheck results now have proper spacing ([3507597](https://github.com/ashblue/unity-simple-spellcheck/commit/35075976104b2989113b0747ba47992e76cf83f2))
+
 # [1.1.0](https://github.com/ashblue/unity-simple-spellcheck/compare/v1.0.1...v1.1.0) (2020-04-15)
 
 

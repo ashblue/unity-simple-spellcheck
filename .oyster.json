@@ -1,0 +1,23 @@
+{
+  "description": "A simple spell check utility for use in the Unity Editor",
+  "displayName": "Unity Simple Spellcheck",
+  "keywords": [
+    "spelling",
+    "spell check",
+    "unity editor",
+    "unity textarea"
+  ],
+  "oysterVersion": "3.0.0",
+  "packageName": "com.fluid.simple-spellcheck",
+  "packageScope": "com.fluid",
+  "unityVersion": "",
+  "author": {
+    "name": "Ash Blue",
+    "email": "ash@clevercrowgames.com",
+    "url": "https://twitter.com/ashbluewd"
+  },
+  "repo": {
+    "gitUrl": "https://github.com/ashblue/unity-simple-spellcheck",
+    "gitUrlNoHttp": "github.com/ashblue/unity-simple-spellcheck"
+  }
+}

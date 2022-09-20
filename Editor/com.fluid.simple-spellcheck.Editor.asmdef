@@ -1,0 +1,12 @@
+{
+    "name": "com.fluid.simple-spellcheck.Editor",
+    "references": [
+        "com.fluid.simple-spellcheck"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false
+}

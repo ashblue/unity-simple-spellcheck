@@ -1,0 +1,16 @@
+<UXML xmlns="UnityEngine.UIElements">
+    <VisualElement name="container">
+        <VisualElement name="text" >
+            <TextElement
+                enabledRichText="true"
+                class="text-block"
+                text="Trigger the spell check API `SpellCheck.Instance.Validate(text)` to see spelling errors."
+            />
+        </VisualElement>
+
+        <Button
+            name="open-settings"
+            text="Settings">
+        </Button>
+    </VisualElement>
+</UXML>

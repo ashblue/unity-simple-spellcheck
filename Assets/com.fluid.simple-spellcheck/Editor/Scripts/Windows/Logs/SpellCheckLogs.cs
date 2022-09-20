@@ -57,6 +57,7 @@ namespace CleverCrow.Fluid.SimpleSpellcheck {
 
 
         private void ClearLogs () {
+            rootVisualElement.Query<VisualElement>("no-results").First().style.display = DisplayStyle.None;
             var logContainer = rootVisualElement
                 .Query<VisualElement>("log-container")
                 .First();

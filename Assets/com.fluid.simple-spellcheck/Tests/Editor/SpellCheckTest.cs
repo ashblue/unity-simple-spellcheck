@@ -14,17 +14,10 @@ namespace CleverCrow.Fluid.SimpleSpellcheck {
             }
 
             [Test]
-            public void It_should_return_the_word_in_an_array () {
-                var result = _spellCheck.Validate("Lorem");
-
-                Assert.AreEqual("Lorem", result[0].Text);
-            }
-
-            [Test]
             public void It_should_return_an_error_for_a_mispelled_word () {
                 var result = _spellCheck.Validate("Lorem");
 
-                Assert.AreEqual(false, result[0].IsValid);
+                Assert.AreEqual("<color=red>Lorem</color>", result);
             }
 
             [Test]
@@ -33,7 +26,7 @@ namespace CleverCrow.Fluid.SimpleSpellcheck {
 
                 var result = _spellCheck.Validate("Lorem");
 
-                Assert.AreEqual(true, result[0].IsValid);
+                Assert.AreEqual("Lorem", result);
             }
         }
 
